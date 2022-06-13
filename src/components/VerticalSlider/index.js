@@ -1,70 +1,64 @@
 import React, { useState } from "react";
-import uuid from "react-uuid";
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
 
+import "./styles.css";
 import FrameItem from "./FrameItem";
-import creme from "./images/creme.jpg";
-import darkBlue from "./images/dark-blue.jpg";
-import green from "./images/green.jpg";
-import orange from "./images/orange.jpg";
-import purple from "./images/purple.jpg";
-import turqoise from "./images/turqoise.jpg";
+
+import imagesData from "./imagesData";
 
 const VerticalSlider = () => {
-  const [images, setImages] = useState([
-    { src: creme, isChosen: true, backgroundColor: "#9c866f" },
-    { src: darkBlue, isChosen: false, backgroundColor: "#02030b" },
-    { src: green, isChosen: false, backgroundColor: "#436a4b" },
-    { src: orange, isChosen: false, backgroundColor: "#bb4a1e" },
-    { src: purple, isChosen: false, backgroundColor: "#c935dd" },
-    { src: turqoise, isChosen: false, backgroundColor: "#95aadd" },
-  ]);
+  const [order, setOrder] = useState(0);
 
   const remainder = (num, divisor) => ((num % divisor) + divisor) % divisor;
 
   function handleSlide(direction) {
-    const newImages = [...images];
-    const currentIdx = images.findIndex((image) => image.isChosen);
-    newImages[currentIdx].isChosen = false;
-    let newIdx = 0;
-
+    console.log({ order });
     if (direction === "up") {
-      newIdx = remainder(currentIdx + 1, images.length);
-    } else if (direction === "down") {
-      newIdx = remainder(currentIdx - 1, images.length);
+      if (order === 0) {
+        setOrder(1 - imagesData.length);
+      } else {
+        setOrder(order + 1);
+      }
     }
-
-    newImages[newIdx].isChosen = true;
-
-    setImages(newImages);
-    console.log(images);
+    if (direction === "down") {
+      if (order === 1 - imagesData.length) {
+        setOrder(0);
+      } else {
+        setOrder(order - 1);
+      }
+    }
   }
 
   return (
     <div className="vertical-slider">
-      <button
-        direction="up"
-        className="vs-up"
-        onClick={() => handleSlide("up")}
-      >
-        <AiOutlineArrowUp />
-      </button>
-      <button
-        direction="down"
-        className="vs-down"
-        onClick={() => handleSlide("down")}
-      >
-        <AiOutlineArrowDown />
-      </button>
-      {images
-        .filter((el) => el.isChosen)
-        .map((frame) => (
-          <FrameItem
-            key={uuid()}
-            src={frame.src}
-            backgroundColor={frame.backgroundColor}
-          />
-        ))}
+      <div className="buttons-container">
+        <button
+          direction="up"
+          className="vs-up"
+          onClick={() => handleSlide("up")}
+        >
+          <AiOutlineArrowDown />
+        </button>
+        <button
+          direction="down"
+          className="vs-down"
+          onClick={() => handleSlide("down")}
+        >
+          <AiOutlineArrowUp />
+        </button>
+      </div>
+
+      {imagesData.map((imageData) => (
+        <FrameItem
+          length={imagesData.length}
+          key={imageData.id}
+          src={imageData.src}
+          backgroundColor={imageData.backgroundColor}
+          order={order}
+          insightFulMessage={imageData.insightFulMessage}
+          insightFulTitle={imageData.insightFulTitle}
+        />
+      ))}
     </div>
   );
 };

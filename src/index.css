@@ -7,6 +7,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  outline:0;
+  box-sizing:border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
 .pin-input {
   width: 50px;
   height: 50px;
@@ -235,73 +243,7 @@ body {
 
 /*  */
 
-/* Vertical Slider  */
-.vertical-slider {
-  display: grid;
-  grid-template-columns: 35% 65%;
-  overflow: hidden;
-}
 
-.vs-side-panel {
-  position: relative;
-  grid-column: 1 / 2;
-  width: 100%;
-  height: 99vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* border: 9px solid red; */
-  animation: 1.5s cubic-bezier(0.99, 0.08, 0.67, 1) 1 slideout;
-   /* height: 100%; */
-   font-size: 25px;
-   padding: 0 30px;
-}
-
-.vs-image{
-  grid-column: 2 / 3;
-  width: 100%;
-  animation: 1.5s cubic-bezier(0.99, 0.08, 0.67, 1) 1 slidein;
-  height: 99vh;
-  /* border: 3px solid red; */
-}
-
-.vs-up {
-  position:absolute;
-  top: 50%;
-  left: 30%;
-  transform: translate(50%);
-  z-index: 2;
-}
-
-.vs-down {
-  position:absolute;
-  top: 50%;
-  left: 40%;
-  transform: translate(-50%);
-  z-index: 2;
-}
-
-@keyframes slidein {
-  from {
-    transform: translateY(-100%);
-  }
-
-  to {
-    transform: translateY(0%);
-  }
-}
-
-@keyframes slideout {
-  from {
-    transform: translateY(100%);
-  }
-
-  to {
-    transform: translateY(0%);
-  }
-}
-
-/*  */
 
 /* Load More Image */
 

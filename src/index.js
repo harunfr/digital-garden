@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 
 import "./index.css";
 // import Checkboxes from './components/Checkboxes';
@@ -24,11 +24,13 @@ import VerticalSlider from "./components/VerticalSlider"; // 9
 // import ToastNotification from './components/ToastNotification' // 19
 // import DrinkWater from './components/DrinkWater' // 20
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(
+  document.getElementById("root") /* as HTMLElement, */
+);
+root.render(
   <React.StrictMode>
     <VerticalSlider />
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );
 
 // search link for DragNDrop

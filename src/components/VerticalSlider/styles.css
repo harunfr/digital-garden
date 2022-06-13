@@ -1,0 +1,91 @@
+  .vertical-slider {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .vs-side-panel {
+    position: relative;
+    grid-column: 1 / 2;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     font-size: 25px;
+     padding: 0 30px;
+     transition: transform 1s ease;
+  }
+  
+  .vs-image{
+    grid-column: 2 / 3;
+    width: 100%;
+    height: 100vh;
+     transition: transform 1s ease;
+  }
+
+  .buttons-container{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 7rem;
+    z-index: 2;
+    left: 35vw;
+    top: 50vh;
+    transform: translate(-50%, -40%);
+  }
+  
+  .vs-up {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    align-self: flex-end;
+    height: 3.5rem;
+    width: 3rem;
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
+  
+  .vs-down {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    align-self: flex-start;
+    height: 3.5rem;
+    width: 3rem;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
+  .vs-down:hover, .vs-up:hover {
+    color: goldenrod;
+  }
+  
+  .message-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.8rem;
+    /* outline: 4px solid red; */
+    align-items: center;
+  }
+
+  .title{
+    color: #ddd;
+  } 
+
+  .body{
+    color: #ddd;
+    font-size: 1rem;
+  }
