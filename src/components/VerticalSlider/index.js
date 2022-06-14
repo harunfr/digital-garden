@@ -9,8 +9,6 @@ import imagesData from "./imagesData";
 const VerticalSlider = () => {
   const [order, setOrder] = useState(0);
 
-  const remainder = (num, divisor) => ((num % divisor) + divisor) % divisor;
-
   function handleSlide(direction) {
     console.log({ order });
     if (direction === "up") {

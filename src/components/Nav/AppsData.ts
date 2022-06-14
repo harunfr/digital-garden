@@ -6,7 +6,7 @@ interface ICurrentApp {
 
 const CurrentApps: ICurrentApp[] = [
   { name: "Double Vertical Slider", status: true, path: "/vertical-slider" },
-  { name: "AnimatedCountdown", status: false, path: "/animated-countdown" },
+  { name: "AnimatedCountdown", status: true, path: "/animated-countdown" },
   { name: "BackgroundBoxes", status: false, path: "/background-boxes" },
   { name: "CatchThem", status: false, path: "/catch-them-all" },
   { name: "CustomRangeSlider", status: false, path: "/custom-range-slider" },

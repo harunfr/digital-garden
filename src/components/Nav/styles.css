@@ -1,121 +1,105 @@
-.navigation-wrapper{
-    position: absolute;
-    /* border: 4px solid blue; */
-
+.navigation-wrapper {
+  position: absolute;
+  /* border: 4px solid blue; */
 }
 
 .cards {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: grid;
-    align-content: start;
-    /* border: 6px solid red; */
-    background-color: #F7F8CB;
-    row-gap: 1rem;
-    width: 33vw;
-    height: 100vh;
-    padding: 0.8rem;
-    overflow: auto;
-    transition: transform 0.5s ease-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  align-content: start;
+  /* border: 6px solid red; */
+  background-color: #f7f8cb;
+  row-gap: 1rem;
+  width: 33vw;
+  height: 100vh;
+  padding: 0.8rem;
+  overflow: auto;
+  transition: transform 0.5s ease-out;
 }
 
 .hide-nav-btn {
-    /* display: none; */
-    position: fixed;
-    top: 50%;
-    left: 33vw;
-    transform: translate(-50%, -50%)  rotate(180deg);
-    cursor: pointer;
-    z-index: 2;
-    background-color: rgb(175, 151, 44);
-    border-radius: 50%;
-    cursor: pointer;
-    font-weight: 800;
-    font-size: 2rem;
-    padding: 1rem;
-    color: #fff;
-    transition: transform 0.5s ease-out;
+  /* display: none; */
+  position: fixed;
+  top: 50%;
+  left: 33vw;
+  transform: translate(-50%, -50%) rotate(180deg);
+  cursor: pointer;
+  z-index: 2;
+  background-color: rgb(175, 151, 44);
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 2rem;
+  padding: 1rem;
+  color: #fff;
+  transition: transform 0.5s ease-out;
 }
 .hide-nav-btn:hover {
-    color: gold;
-    
+  color: gold;
 }
 
 .navigation-wrapper.hidden .cards {
-    transform: translateX(-33vw);
+  transform: translateX(-33vw);
 }
 
 .navigation-wrapper.hidden .hide-nav-btn {
-    transform: translateX(-36vw) rotate(0deg);
+  transform: translateX(-36vw) rotate(0deg);
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 .card-container {
-    display: block;
-    position: relative;
-    padding: 1rem;
-    border-radius: 2rem;
-    background-color: #fff;
-    cursor: pointer;
-    transition: transform 0.4s ease;
-    text-decoration: none;
+  display: block;
+  position: relative;
+  padding: 1rem;
+  border-radius: 2rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+  text-decoration: none;
 }
 
 .card-container:hover {
-   outline: 3px solid #ddd;
+  outline: 3px solid #ddd;
 }
 
 .card-container:hover .not-ready {
-    background-color: red;
- }
+  background-color: red;
+}
 
- .card-container:hover .finished {
-    background-color: green;
- }
+.card-container:hover .finished {
+  background-color: green;
+}
 
+.card-container:hover .app-name {
+  color: #000;
+}
 
- .card-container:hover .app-name {
-    color: #000;
- }
-
- .card-container:active {
-    transform: scale(0.96);
- }
+.card-container:active {
+  transform: scale(0.96);
+}
 
 .app-name {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #333;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
 }
-.finished, .not-ready {
-    position: absolute;
-    top: 50%;
-    right: 1rem;
-    transform: translateY(-50%);
-    background-color: rgba(0, 128, 0, 0.815);
-    width: 14px;
-    height: 14px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+.finished,
+.not-ready {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  background-color: rgba(0, 128, 0, 0.815);
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 .not-ready {
-    background-color: rgba(255, 0, 0, 0.747);
+  background-color: rgba(255, 0, 0, 0.747);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
