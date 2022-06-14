@@ -1,24 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { CgChevronDoubleLeftO } from "react-icons/cg";
+import { IconContext } from "react-icons";
 
 import "./styles.css";
-
 import CurrentApps from "./AppsData";
 
-const Catalog = (): JSX.Element => (
-  <div className="cards">
-    {CurrentApps.map(({ name, status }, index) => {
-      return (
-        <div key={index} className="card-container">
-          <div className="app-name">{name}</div>
-          {status === true ? (
-            <div className="finished" />
-          ) : (
-            <div className="not-ready" />
-          )}
-        </div>
-      );
-    })}
-  </div>
-);
+const Nav = (): JSX.Element => {
+  const [isNavActive, setIsNavActive] = useState(true);
 
-export default Catalog;
+  return (
+    <nav className={`${isNavActive ? "navigation-wrapper" : "navigation-wrapper hidden"}`}>
+      <div className="hide-nav-btn" onClick={() => setIsNavActive(!isNavActive)}>
+      &gt;&gt;
+      </div>
+    <ul className='cards'>
+      {CurrentApps.map(({ name, status, path }, index) => {
+        return (
+          <li 
+          key={index}
+          >
+            <Link
+              to={path}
+              className="card-container"
+              onClick={() => setIsNavActive(false)}
+            >
+              <h2 className="app-name">{name}</h2>
+              {status === true ? (
+                <div className="finished" />
+              ) : (
+                <div className="not-ready" />
+              )}
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+    </nav>
+  );
+};
+
+export default Nav;
