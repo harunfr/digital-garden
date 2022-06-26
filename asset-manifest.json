@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/digital-garden/static/css/main.ee084dc9.css",
-    "main.js": "/digital-garden/static/js/main.5a7b8557.js",
+    "main.css": "/digital-garden/static/css/main.91f7a6cf.css",
+    "main.js": "/digital-garden/static/js/main.796d60b8.js",
     "static/media/bike.jpg": "/digital-garden/static/media/bike.d818ebc2a708548c2cf7.jpg",
     "static/media/green.jpg": "/digital-garden/static/media/green.f31c6216d19e72cd0bf5.jpg",
     "static/media/purple.jpg": "/digital-garden/static/media/purple.f8be0f50aaef9495152d.jpg",
@@ -19,11 +19,11 @@
     "static/media/gasp.mp3": "/digital-garden/static/media/gasp.21db83a7a5f945fd9ef7.mp3",
     "static/media/wrong.mp3": "/digital-garden/static/media/wrong.57da2ce6b5415ee03170.mp3",
     "index.html": "/digital-garden/index.html",
-    "main.ee084dc9.css.map": "/digital-garden/static/css/main.ee084dc9.css.map",
-    "main.5a7b8557.js.map": "/digital-garden/static/js/main.5a7b8557.js.map"
+    "main.91f7a6cf.css.map": "/digital-garden/static/css/main.91f7a6cf.css.map",
+    "main.796d60b8.js.map": "/digital-garden/static/js/main.796d60b8.js.map"
   },
   "entrypoints": [
-    "static/css/main.ee084dc9.css",
-    "static/js/main.5a7b8557.js"
+    "static/css/main.91f7a6cf.css",
+    "static/js/main.796d60b8.js"
   ]
 }
