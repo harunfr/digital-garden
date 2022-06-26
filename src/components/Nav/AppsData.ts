@@ -7,6 +7,11 @@ interface ICurrentApp {
 const CurrentApps: ICurrentApp[] = [
   { name: "Double Vertical Slider", status: true, path: "/vertical-slider" },
   { name: "AnimatedCountdown", status: true, path: "/animated-countdown" },
+  {
+    name: "BasicRobotSimulator",
+    status: true,
+    path: "/basic-robot-simulator",
+  },
   { name: "BackgroundBoxes", status: false, path: "/background-boxes" },
   { name: "CatchThem", status: false, path: "/catch-them-all" },
   { name: "CustomRangeSlider", status: false, path: "/custom-range-slider" },
@@ -26,6 +31,7 @@ const CurrentApps: ICurrentApp[] = [
   { name: "Checkboxes", status: false, path: "/checkboxes" },
   { name: "LiveUserFilter", status: false, path: "/live-user-filter" },
   { name: "VerifyAccount", status: false, path: "/verify-account" },
+
   // { name: "WWWWWWWWW", status: false , path: '/verify-account'},
 ];
 

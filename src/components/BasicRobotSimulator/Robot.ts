@@ -5,8 +5,8 @@
  * coordinates -> mathematical, x first --> [x, y]
  */
 
-type TDirection = "north" | "east" | "west" | "south";
-type TCommand = "A" | "L" | "R";
+export type TDirection = "north" | "east" | "west" | "south";
+export type TCommand = "A" | "L" | "R" | string;
 
 interface IPlaceOrder {
   direction: TDirection;
@@ -36,8 +36,7 @@ export default class Robot {
     this.coordinates = [0, 0];
   }
 
-  place({ direction, x, y }: IPlaceOrder) {
-    // throw new Error("Not implemented yet.");
+  place({ direction, x, y }: IPlaceOrder): void {
     if (isValidDirection(direction)) {
       this.bearing = direction;
       this.coordinates = [x, y];
@@ -46,18 +45,18 @@ export default class Robot {
     }
   }
 
-  evaluate(commandChain: TCommand): void {
-    commandChain.split("").forEach((command) => {
+  evaluate(commands: TCommand): void {
+    commands.split("").forEach((command) => {
       if (command === "L" || command === "R") {
         const direction = command;
         this.turn(direction);
-      } else {
+      } else if (command === "A") {
         this.advance();
       }
     });
   }
 
-  turn(direction: TCommand) {
+  turn(direction: TCommand): void {
     const currentDirectionIndex = validDirections.indexOf(this.bearing);
     let newDirectionIndex = validDirections.indexOf(this.bearing);
 

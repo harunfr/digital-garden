@@ -23,6 +23,7 @@ import AutoText from "./components/AutoText"; // 18
 import ToastNotification from "./components/ToastNotification"; // 19
 import DrinkWater from "./components/DrinkWater"; // 20
 import LiveUserFilter from "./components/LiveUserFilter";
+import BasicRobotSimulator from "./components/BasicRobotSimulator"; //21
 
 const RouteSwitch = () => {
   return (
@@ -51,6 +52,10 @@ const RouteSwitch = () => {
         <Route path="/live-user-filter" element={<LiveUserFilter />} />
         <Route path="/verify-account" element={<VerifyAccount />} />
         <Route path="/todo" element={<Todo />} />
+        <Route
+          path="/basic-robot-simulator"
+          element={<BasicRobotSimulator />}
+        />
         {/* <Route path="/WWWWWWWWWWWWWWWWWWWWWWWWWWWWW" element={<WWWWWWWW />} /> */}
       </Routes>
     </Router>

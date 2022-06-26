@@ -1,4 +1,4 @@
-import  Robot, { InvalidInputError } from "./Robot";
+import Robot, { InvalidInputError } from "./Robot";
 function turnRight(robot) {
   robot.evaluate("R");
 }
